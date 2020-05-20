@@ -1,0 +1,342 @@
+.yuansujuzhong{
+			
+				display: flex;/*设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效*/
+				display: -webkit-flex; /* Safari */
+				flex-direction: row;/*容器内项目的排列方向(默认横向排列 row)*/
+				flex-wrap: nowrap;/*容器内项目换行方式*/
+				justify-content: center;/*项目在主轴上的对齐方式*/
+				align-items: center;/*项目在交叉轴上如何对齐*/
+				align-content: center;/*定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用*/
+			}
+			
+#svgBox {
+            width: 100%;
+			
+            margin: 100% auto;
+        }
+
+        .text {
+            font-size: 3.125rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            fill: none;
+            stroke-width: 2px;
+            stroke-dasharray: 90 310;
+            animation: stroke 6s infinite linear;
+        }
+
+        .text-1 {
+            stroke: #3498db;
+            text-shadow: 0 0 5px #3498db;
+            animation-delay: -1.5s;
+        }
+
+        .text-2 {
+            stroke: #0000FF;
+            text-shadow: 0 0 5px #0000FF;
+            animation-delay: -3s;
+        }
+
+        .text-3 {
+            stroke: #000088;
+            text-shadow: 0 0 5px #000088;
+            animation-delay: -4.5s;
+        }
+
+        .text-4 {
+            stroke: #0276AE;
+            text-shadow: 0 0 5px #0276AE;
+            animation-delay: -6s;
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+
+        .svgText {
+            width: 30%;
+            margin: 0 auto;
+        }
+
+            .svgText h3 {
+                font-size: 18px;
+                color: #333;
+                line-height: 2;
+            }
+
+            .svgText p {
+                font-size: 16px;
+                color: #888;
+                line-height: 2;
+            }
+
+                .svgText p a, .svgText p a:hover {
+                    color: #01a6fc;
+                    font-weight: 30%;
+                }
+
+            .svgText ul li {
+                font-size: 16px;
+                color: #888;
+                line-height: 2;
+            }			
+div.duihuakuang {
+	color: #F7F7F7;
+	background-color:rgba(220,38,38,0);
+	height:35%;
+	width:90%;
+	position: absolute;
+	  left: 5%;
+	  top: 60%;
+	z-index: -50;
+	display: flex;
+	    justify-content: space-between;
+
+	
+}
+div.duihuakuang1 {
+	color: #F7F7F7;
+	background-color:rgba(220,38,38,0);
+	height:35%;
+	width:90%;
+	position: absolute;
+	  left: 5%;
+	  top: 60%;
+	z-index: 50;
+	display: flex;
+	    justify-content: space-between;
+
+	
+	
+}
+div.duihuakuang2 {
+	background-image: url(../image/yinghua.png);
+	background-color:rgba(255,184,198,0.66667);
+	height:85%;
+	width:100%;
+	position: absolute;
+	  left: 0%;
+	  top: 15%;
+	  border-width:0px;border-style:dashed;border-color:#ffb8c6;padding:5px;
+	  box-shadow:0px 5px 10px black ;
+	}
+	
+	div.duihuakuang3 {
+		
+		background-color:rgba(110,200,120,0);
+		height:100%;
+		width:92%;
+		position: absolute;
+		  left: 4%;
+		  top: 0%;
+		}
+div.anniu{
+	color: #FFb8c6;
+	background-color:rgba(236,240,241,0.4);
+	height:12%;
+	width:15%;
+	box-shadow:0px 0px 5px black ;
+	
+	
+	
+}
+div.anniu:hover{
+	color: #ECF0F1;
+	background-color:rgba(255,184,198,0.8);
+	height:12%;
+	width:15%;
+	border:1px solid rgba(255,184,198,0.8);
+	box-shadow:0px 0px 5px black ;
+	
+	
+}
+div.anniu2{
+	color: #FFb8c6;
+	background-color:rgba(236,240,241,0.4);
+	height:100%;
+	width:15%;
+	box-shadow:0px 0px 5px black ;
+	
+	
+	
+}
+div.anniu2:hover{
+	color: #ECF0F1;
+	background-color:rgba(255,184,198,0.6);
+	height:123%;
+	width:15%;
+	border:1px solid rgba(255,184,198,0.8);
+	box-shadow:0px 0px 5px black ;
+	
+	
+}
+div.anniuqun{
+	
+	height:12%;
+	width:45%;
+	right:0%;
+	display: flex;
+	    justify-content: space-between;
+}
+
+	
+	
+}
+div.youxichuangkou{
+	
+	  position: absolute;
+	  left: 0rem;
+	  top: 0rem;
+	height: 100%;
+	width:100%;
+	padding-top: 0rem;
+	  padding-right: 0rem;
+	  padding-bottom: 0rem;
+	  padding-left: 0rem;
+	    margin-top: 0rem;
+	    margin-right: 0rem;
+	    margin-bottom: 0rem;
+	    margin-left: 0rem;
+	
+}
+/*animation-name -----------------------规定需要绑定到选择器的 keyframe 名称。。
+animation-duration-------------------- 规定完成动画所花费的时间，以秒或毫秒计。
+animation-timing-function------------规定动画的速度曲线。
+animation-delay -----------------------规定在动画开始之前的延迟。
+animation-iteration-count -----------规定动画应该播放的次数。
+animation-direction------------------- 规定是否应该轮流反向播放动画。*/
+
+img.beijing{
+	display: block;
+	height:100%;
+	width: 100%;
+	object-fit: cover;
+}
+img.lihui{
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	display: block;
+	height:100%;
+	
+	object-fit: cover;
+	
+	
+}
+div.beijing{
+	position: absolute;
+	  left: 0rem;
+	  top: 0rem;
+	height: 100%;
+	
+	padding-top: 0rem;
+	  padding-right: 0rem;
+	  padding-bottom: 0rem;
+	  padding-left: 0rem;
+	    margin-top: 0rem;
+	    margin-right: 0rem;
+	    margin-bottom: 0rem;
+	    margin-left: 0rem;
+		
+		z-index: -10;
+	
+}
+div.lihui{
+	position: absolute;
+	  left: 0rem;
+	  top: 20%;
+	height: 80%;
+	width: 100%;
+	
+	padding-top: 0rem;
+	  padding-right: 0rem;
+	  padding-bottom: 0rem;
+	  padding-left: 0rem;
+	    margin-top: 0rem;
+	    margin-right: 0rem;
+	    margin-bottom: 0rem;
+	    margin-left: 0rem;
+		
+		z-index: -30;
+		
+}
+h1 {
+	color: #111111 ;
+	display:none;
+}
+
+div.touming{
+    visibility: hidden;    /*隐藏*/
+    
+}
+
+div.qidongyezuoshangjiao{
+	
+	position: absolute;
+	  left: 5%;
+	  top: 0rem;
+	height: 10%;
+	width:30%;
+	padding-top: 0rem;
+	  padding-right: 0rem;
+	  padding-bottom: 0rem;
+	  padding-left: 0rem;
+	    margin-top: 0rem;
+	    margin-right: 0rem;
+	    margin-bottom: 0rem;
+	    margin-left: 0rem;
+	
+}
+div.qidongyezhongjian{
+	
+	position: absolute;
+	  margin:auto;
+	  top: 10%;
+	  right:20%;
+	  left:20%;
+	height: 60%;
+	width:60%;
+	padding-top: 0rem;
+	  padding-right: 0rem;
+	  padding-bottom: 0rem;
+	  padding-left: 0rem;
+	    margin-top: 0rem;
+	    margin-right: 0rem;
+	    margin-bottom: 0rem;
+	    margin-left: 0rem;
+}
+div.qidongyekaishi{
+	
+	position: absolute;
+	  
+	  top:70% ;
+	  left:35%;
+	  right: 35%;
+	height: 20%;
+	width:30%;
+	padding-top: 0rem;
+	  padding-right: 0rem;
+	  padding-bottom: 0rem;
+	  padding-left: 0rem;
+	    margin-top: 0rem;
+	    margin-right: 0rem;
+	    margin-bottom: 0rem;
+	    margin-left: 0rem;
+}
+div.qidongyeyouxiajiao{
+	
+	position: absolute;
+	 right: 5%;
+	  top: 90%;
+	height: 10%;
+	width:30%;
+	padding-top: 0rem;
+	  padding-right: 0rem;
+	  padding-bottom: 0rem;
+	  padding-left: 0rem;
+	    margin-top: 0rem;
+	    margin-right: 0rem;
+	    margin-bottom: 0rem;
+	    margin-left: 0rem;
+}
