@@ -9,6 +9,16 @@
 				align-content: center;/*定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用*/
 			}
 			
+/*关于图层的设定
+对话50
+表情40
+立绘30
+背景20
+遮挡物0
+不显示为负
+依此类推，最好每一层相隔的远一点，这样日后再往中间插入别的也有地方加
+什么东西在哪一层，最好在一开始就决定好
+顺便有些浏览器对图层的支持是有上限的，数字不能太大，老写9999999不是好习惯*/
 #svgBox {
             width: 100%;
 			
@@ -81,7 +91,8 @@
                 font-size: 16px;
                 color: #888;
                 line-height: 2;
-            }			
+            }
+						/*初始位于-50的对话框*/
 div.duihuakuang {
 	color: #F7F7F7;
 	background-color:rgba(220,38,38,0);
@@ -90,15 +101,16 @@ div.duihuakuang {
 	position: absolute;
 	  left: 5%;
 	  top: 60%;
-	z-index: -50;
+	z-index: -50;/*决定谁显示谁隐藏的属性，也就是图层，可以在第0层弄一个遮挡物，只有正数图层会显示*/
 	display: flex;
 	    justify-content: space-between;
 
 	
 }
+/*初始位于50的对话框*/
 div.duihuakuang1 {
 	color: #F7F7F7;
-	background-color:rgba(220,38,38,0);
+	background-color:rgba(220,38,38,0);/*rgb颜色和透明度，最后一个数字取值0-1，1是不透明，0就看不见了*/
 	height:35%;
 	width:90%;
 	position: absolute;
@@ -112,7 +124,7 @@ div.duihuakuang1 {
 	
 }
 div.duihuakuang2 {
-	background-image: url(../image/yinghua.png);
+	background-image: url(../image/yinghua.png);/*对话框的背景图片*/
 	background-color:rgba(255,184,198,0.66667);
 	height:85%;
 	width:100%;
@@ -120,7 +132,7 @@ div.duihuakuang2 {
 	  left: 0%;
 	  top: 15%;
 	  border-width:0px;border-style:dashed;border-color:#ffb8c6;padding:5px;
-	  box-shadow:0px 5px 10px black ;
+	  box-shadow:0px 5px 10px black ;/*阴影效果*/
 	}
 	
 	div.duihuakuang3 {
@@ -142,6 +154,7 @@ div.anniu{
 	
 	
 }
+/*鼠标放到按钮上时的式样*/
 div.anniu:hover{
 	color: #ECF0F1;
 	background-color:rgba(255,184,198,0.8);
@@ -219,8 +232,11 @@ img.lihui{
 	animation-iteration-count: 1;
 	display: block;
 	height:100%;
-	
+	/*width: 50%;
+	object-fit: contain;
 	object-fit: cover;
+	object-fit: none;*/
+
 	
 	
 }
