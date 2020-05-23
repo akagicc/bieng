@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>C1</title>
+		<link rel="stylesheet" href="../bieng.css">
+		<link rel="stylesheet" href="../animate.css">
+		<script src="../bieng.js" type="text/javascript"></script>
+		<script src="../jquery-1.11.0.min.js"></script>
+		
+	</head>
+	<body>
+		<!--背景-->
+		<div id ='beijing1' class="beijing yuansujuzhong">
+			<img id="beijing_1" class="beijing" src="../image/jiaoshi01_qingchen.png" height="100%" alt="教室" />
+		</div>
+		<div id ='beijing2' class="beijing yuansujuzhong">
+			<img id="beijing_2" class="beijing"  style="display: none;" src="../image/jiaoshi01_qingchen.png" height="100%" alt="教室" />
+		</div>
+		<!--立绘-->
+	
+		 
+		
+		<div id="lihui_1" class="lihui yuansujuzhong">
+				
+			<img id="lihuitupian_1" style="display: none; "  class="lihui" src="../image/lihui1.png" />
+			<img id="lihuitupian_2" style="display: none; "  class="lihui" src="../image/lihui1.png" />
+		
+		</div>
+		<!--特效-->
+		
+		<!--对话框-->
+		
+		<div class="duihuakuang1" id="duihua_0">
+			<div class="anniu yuansujuzhong"><h2>【NONE】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='duihuamoban.html'"><h2>刷新</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="jixujindu()"><h2>继续</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang0" onclick="duihuashangfu('duihua_1'); duihuaxiachen('duihua_0')">
+			<div class="duihuakuang3">
+				<h1 style="display: block;">
+			点击以初始化
+			   </h1>
+			</div>
+			</div>
+		</div>
+		
+		<script>
+			var jindu=0;
+		$(document).ready(function(){
+				  $("#juzikuang0").on('click',function(){//点击对话框之后会发生的动作
+				
+				    $("#juzi_1").fadeIn(1000);//下一句话淡入，数值是动画时间，单位是毫秒
+					 lihuishangfu('lihui_1');//立绘出现
+					$("#lihuitupian_1").fadeIn(1000);
+					
+					
+					 bgm2.pause();//暂停
+					bgm1.play();//播放
+					peiyin1.play();
+					});
+				
+					
+				
+			
+				});
+		
+		</script>
+		<!--这一整个div和script是一个对话模块，初始化模块可有可无-->
+		
+		
+		<div class="duihuakuang" id="duihua_1">
+			<div class="anniu yuansujuzhong"><h2>【饼饼】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu('duihua_0'); duihuaxiachen('duihua_1');lihuixiachen('lihui_1')"><h2>后退</h2></div>
+			
+			<div  class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang1" onclick="duihuashangfu('duihua_2'); duihuaxiachen('duihua_1');">
+			<div class="duihuakuang3">
+				<h1 id="juzi_1">
+			
+			欢迎使用bieng系统，这是一款基于web的视觉小说游戏开源框架。通过使用框架，您可以轻松创造属于自己的游戏。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<!--后面的复制粘贴就行，每次改一改id的数字，虽然看起来每次都要改数字很麻烦，其实都写成函数更麻烦，这样至少不会和别的互相干扰，而且做剧情选择分歧的时候，是不是简单多了-->
+		<script>
+			
+			
+			
+			$(document).ready(function(){
+					 
+						
+					  $("#juzikuang1").on('click',function(){
+					    $("#juzi_2").fadeIn(1000);
+						
+						lihuishangfu('lihui_1');
+						$("#lihuitupian_1").fadeIn(1000);
+						
+						
+						//peiyin1.play();//播放
+						bgm1.pause();//暂停
+						bgm2.play();
+						peiyin1.pause();
+						jindu=1;
+		
+						});
+				
+					});
+					//这些script，也就是脚本，也可以写在外部，不过这样比较方便修改，建议每个对话都和自己的脚本放在一起
+		</script>
+		
+		<div class="duihuakuang" id="duihua_2">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_1'); duihuaxiachen('duihua_2')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang2" onclick="duihuashangfu('duihua_3'); duihuaxiachen('duihua_2');">
+			<div class="duihuakuang3">
+				<h1 id="juzi_2">
+			因为使用的是纯前端技术，所以不需要在服务器上运行，甚至可以经过简单修改后直接在手机上运行。当然也可以封装成应用程序，就像其他的Webapp一样。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang2").on('click',function(){
+				  $("#juzi_3").fadeIn(1000); 
+				 
+				  lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeOut(1000);
+				  
+				  peiyin2.pause();
+				  peiyin3.play();
+				  jindu=2;
+				  });
+				
+				});
+		
+		</script>
+		
+		
+		
+		<div class="duihuakuang" id="duihua_3">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_2'); duihuaxiachen('duihua_3')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang3" onclick="duihuashangfu('duihua_4'); duihuaxiachen('duihua_3');">
+			<div class="duihuakuang3">
+				<h1 id="juzi_3">
+			如果放到服务器上，也可以像一个普通网页游戏一样，不用下载即可游玩。因为游戏本体只是个html文件，所以支持各种类型的网站服务器。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				
+				  $("#juzikuang3").on('click',function(){
+				    $("#juzi_4").fadeIn(1000);
+					lihuishangfu('lihui_1');
+					$("#lihuitupian_1").fadeIn(1000);
+					jindu=3;
+				  });
+				});
+		
+		</script>
+		
+		<div class="duihuakuang" id="duihua_4">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_3'); duihuaxiachen('duihua_4')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang4" onclick="duihuashangfu('duihua_5'); duihuaxiachen('duihua_4')">
+			<div class="duihuakuang3">
+				<h1 id="juzi_4">
+			如你所见bieng系统可以像普通galgame一样播放配音、根据交互改变显示内容。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang4").on('click',function(){
+				  $("#juzi_5").fadeIn(1000); 
+				  lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeIn(1000);
+				
+				  
+				  peiyin4.pause();
+				  peiyin5.play();
+				  jindu=4;
+				  });
+				
+				});
+		
+		</script>
+		
+		<div class="duihuakuang" id="duihua_5">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_4'); duihuaxiachen('duihua_5')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang5" onclick="duihuashangfu('duihua_6'); duihuaxiachen('duihua_5')">
+			<div class="duihuakuang3">
+				<h1 id="juzi_5">
+			也支持多人立绘，而且立绘出现和消失是有渐变动画的，动画速度可以自己设置。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang5").on('click',function(){
+				  $("#juzi_6").fadeIn(1000); 
+				   lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  
+				  $("#lihuitupian_2").fadeOut(1000);
+				  
+				  peiyin5.pause();
+				  peiyin6.play();
+				  jindu=5;
+				  });
+				
+				});
+		
+		</script>
+		
+		<div class="duihuakuang" id="duihua_6">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_5'); duihuaxiachen('duihua_6')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang6" onclick="duihuashangfu('duihua_7'); duihuaxiachen('duihua_6')">
+			<div class="duihuakuang3">
+				<h1 id="juzi_6">
+			用开源的animate.css实现了立绘的动画效果。当然也可以换成其他的实现方式。不过animate.css是基于原生css的，所以运行效率非常高，非常适合。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang6").on('click',function(){
+				  $("#juzi_7").fadeIn(1000); 
+				   lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeOut(1000);
+				  donghuabeng('lihuitupian_1');
+				  
+				  peiyin6.pause();
+				  peiyin7.play();
+				  jindu=6;
+				  });
+				
+				});
+		
+		</script>
+		
+		<div class="duihuakuang" id="duihua_7">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_6'); duihuaxiachen('duihua_7')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang7" onclick="duihuashangfu('duihua_8'); duihuaxiachen('duihua_7')">
+			<div class="duihuakuang3">
+				<h1 id="juzi_7">
+			也支持离线的存档功能，点击保存就可以保存进度，刷新页面后点击继续就可以回到之前的进度。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang7").on('click',function(){
+				  $("#juzi_8").fadeIn(1000); 
+				   lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeOut(1000);
+				   donghuadou('lihuitupian_1');
+				  
+				  peiyin7.pause();
+				  peiyin8.play();
+				  jindu=7;
+				  });
+				
+				});
+		
+		</script>
+		
+		
+		<div class="duihuakuang" id="duihua_8">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_7'); duihuaxiachen('duihua_8')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang8" onclick="duihuashangfu('duihua_9'); duihuaxiachen('duihua_8');">
+			<div class="duihuakuang3">
+				<h1 id="juzi_8">
+			在界面的设计方面，因为bieng系统本质上就是一个网页，所以完全可以按照网页的设计方法来进行。
+			目前网络上已经有大量的网页制作工具了，各式各样的按钮、图形数不胜数。如果嫌麻烦完全可以用搭积木的方式进行设计。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang8").on('click',function(){
+				  $("#juzi_9").fadeIn(1000); 
+				   lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeOut(1000);
+				  
+				  peiyin8.pause();
+				  peiyin9.play();
+				  jindu=8;
+				  });
+				
+				});
+		
+		</script>
+		
+		
+		<div class="duihuakuang" id="duihua_9">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_8'); duihuaxiachen('duihua_9')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang9" onclick="duihuashangfu('duihua_10'); duihuaxiachen('duihua_9');">
+			<div class="duihuakuang3">
+				<h1 id="juzi_9">
+			bieng系统基本上只用到了前端技术最基础的部分，而且有详细的说明和教程，
+			各个教程网站也都会详细讲解这些基础知识，所以完全不用担心使用的学习成本。
+
+
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang9").on('click',function(){
+				  $("#juzi_10").fadeIn(1000); 
+				   lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeOut(1000);
+				  
+				  peiyin9.pause();
+				  peiyin10.play();
+				  jindu=9;
+				  });
+				
+				});
+		
+		</script>
+		
+		
+		<div class="duihuakuang" id="duihua_10">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_9'); duihuaxiachen('duihua_10')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang10" onclick="duihuashangfu('duihua_11'); duihuaxiachen('duihua_10');">
+			<div class="duihuakuang3">
+				<h1 id="juzi_10">
+			特效、剧情选择分支、背景变化、cg展示、live2d等等也都很容易实现，因为没有素材，这里就不演示了。
+			（与网页上的live2d相关的开源项目非常多，难点其实是素材本身不好做）
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang10").on('click',function(){
+				  $("#juzi_11").fadeIn(1000); 
+				   lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeOut(1000);
+				  
+				  peiyin10.pause();
+				  peiyin11.play();
+				  jindu=10;
+				  });
+				
+				});
+		
+		</script>
+		
+		
+		<div class="duihuakuang" id="duihua_11">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_10'); duihuaxiachen('duihua_11')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang11" onclick="duihuashangfu('duihua_12'); duihuaxiachen('duihua_11');">
+			<div class="duihuakuang3">
+				<h1 id="juzi_11">
+			bieng系统到底和其他同类产品有什么区别呢？这是开源的呀，也就是完全开放而且免费的。
+			而且最终游戏可以运行在所有能浏览网页的设备上。开源意味着<font color="#FF0000">无限的可能性</font> 。
+			（而且网页改字体、颜色什么的是很方便的，顺便适配不同分辨率也只需要调整字体大小）
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang11").on('click',function(){
+				  $("#juzi_12").fadeIn(1000); 
+				   lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeOut(1000);
+				  
+				  peiyin11.pause();
+				  peiyin12.play();
+				  jindu=11;
+				  });
+				
+				});
+		
+		</script>
+		
+		<div class="duihuakuang" id="duihua_12">
+			<div class="anniu yuansujuzhong"><h2>【饼姐】</h2></div>
+			<div class="anniuqun">
+				
+			<div class="anniu2 yuansujuzhong"  onclick="duihuashangfu('duihua_11'); duihuaxiachen('duihua_12')"><h2>后退</h2></div>
+			
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快进</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="duihuashangfu();duihuaxiachen()"><h2>快退</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="baocunjindu()"><h2>存档</h2></div>
+			<div class="anniu2 yuansujuzhong" onclick="javascript:window.location.href='kaishicaidan.html'"><h2>菜单</h2></div>
+			</div>
+			<div class="duihuakuang2" id="juzikuang12" onclick="duihuashangfu('duihua_13'); duihuaxiachen('duihua_12');">
+			<div class="duihuakuang3">
+				<h1 id="juzi_12">
+			页面自带刷新、静音、前进后退功能，可以双指放大的游戏界面，超高清的图形和字体，可以轻松适配不同比例屏幕的界面等等，这些都是现代化网页游戏独有的优势。
+			</br>之后也会不断更新，加入更多功能。
+			   </h1>
+			</div>
+			</div>
+		</div>
+		<script>
+			
+		$(document).ready(function(){
+				  
+				
+					
+				
+				$("#juzikuang12").on('click',function(){
+				  $("#juzi_13").fadeIn(1000); 
+				   lihuishangfu('lihui_1');
+				  $("#lihuitupian_1").fadeIn(1000);
+				  $("#lihuitupian_2").fadeOut(1000);
+				  
+				  peiyin12.pause();
+				  //peiyin13.play();
+				  jindu=12;
+				  });
+				
+				});
+		
+		</script>
+		
+	</body>
+</html>
